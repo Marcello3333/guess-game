@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        #message{
+            color: white;
+            background-color: cornflowerblue;
+            margin-bottom: 30px;
+        }
+        #backG{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #input1{
+            width: 400px;
+            height: 60px;
+        }
+        #guesser{
+            margin-top: 30px;
+            width: 100px;
+            height: 50px;
+        }
+        h3, h2{
+            color: aliceblue;
+            font-family: monospace;
+            font-size: 20px;
+            margin-bottom: 50px;
+            margin-top: 70px;
+
+        }
+        h2{
+            background-color: midnightblue;
+            width: 600px;
+            height: 80px;
+            padding-left: 55px;
+            padding-top: 20px;
+            padding-bottom: 10px;
+            border-radius: 30px;
+        }
+        .div2{
+            background-color: gray;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div id="backG">
+
+        
+            <h3>Guess A Number, YOU MIGHT BE A WINNER</h3>
+
+        <p 
+        id="message"
+        ></p>
+        
+        <div>
+            <input type="text" id="input1">
+        </div>
+
+        <div>
+            <button id="guesser" onclick="show()">Guess</button>
+        </div>
+
+        <h2>THERE IS NO WRONG GUESS, ONLY A LUCKY MOVE</h2>
+
+        
+
+        
+    </div>
+
+    
+    
+</body>
+</html>
+
+<script>
+    let backGround = document.getElementById('backG')
+    let message = document.getElementById('message')
+    console.log(backGround);
+
+
+    backGround.style.backgroundImage = "url(flames.avif)"
+    backGround.style.height = "100vh"
+    backGround.style.width = "100%"
+    backGround.style.backgroundSize = "contain"
+    backGround.style.paddingTop = "100px"
+
+
+    let inp = document.getElementById('input1')
+    // inp = num
+
+    // const num = Math.floor(Math.random () * 19)+2
+    // console.log(num)
+
+    
+
+
+
+    let guess = document.getElementById('guesser')
+
+
+    function show(params) {
+        const num = Math.floor(Math.random () * 19)+2
+        console.log(num);
+
+    if(inp.value == num ){
+        message.innerHTML = "Congrats!!!"
+    }else{
+        message.innerHTML = `You got it wrong, the correct code is ${num}`
+    }
+
+    }
+    
+</script>
